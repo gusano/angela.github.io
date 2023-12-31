@@ -1,0 +1,50 @@
+---
+---
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'f';
+  font-weight: 100;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/assets/fonts/f.woff2) format("woff2");
+}
+@font-face {
+  font-family: 'fb';
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/assets/fonts/fb.woff2) format("woff2");
+}
+@font-face {
+  font-family: 'GooperBold';
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/assets/fonts/Gooper-Bold.woff2) format("woff2");
+}
+@font-face {
+  font-family: 'GooperBoldItalic';
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/assets/fonts/Gooper-BoldItalic.woff2) format("woff2");
+}
+
+body {
+  color: text-gray-600;
+}
+
+.site-header {
+  border: none;
+}
+.site-nav .trigger .page-link {
+  color: unset;
+}

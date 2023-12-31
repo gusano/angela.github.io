@@ -1,0 +1,15 @@
+  <div class="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+    {% assign all_projects = site.projects %}
+    {% assign projects = site.projects | where: "category", include.category | default: all_projects %}
+
+    {%- for project in projects -%}
+    <div class="group relative w-[290px] h-[230px] inline-block">
+      <a href="{{ project.url }}" class="w-full h-full">
+        <div class="w-full h-full opacity-0 absolute top-0 bg-black flex justify-center items-center transition-opacity group-hover:opacity-70">
+          <div class="text-white uppercase">{{ project.title }}</div>
+        </div>
+        <img class="align-middle w-[290px] h-[230px]" src="{{ site.baseurl }}/assets/images/{{ project.thumb }}" alt={{ project.id }} />
+      </a>
+    </div>
+    {%- endfor -%}
+  </div>
