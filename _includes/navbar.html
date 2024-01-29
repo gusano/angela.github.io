@@ -1,0 +1,65 @@
+<header class="fixed w-full top-0 z-[9999] bg-white drop-shadow-md">
+	<nav class="flex justify-between items-center border-b border-b-gray-300 px-4 py-2">
+		<input type="checkbox" id="nav-checkbox" class="hidden">
+		<label for="nav-checkbox" id="nav-toggle" class="absolute sm:hidden cursor-pointer my-1 right-4 w-4 h-4">
+      <div class="space-y-2 relative right-4 top-[-2px]" id="menu">
+        <span class="block w-8 h-0.5 bg-black"></span>
+        <span class="block w-8 h-0.5 bg-black"></span>
+        <span class="block w-8 h-0.5 bg-black"></span>
+      </div>
+			<span id="svg-close" class="close w-6 fill-white hidden absolute -top-1 right-2"></span>
+    </label>
+    <a class="!text-black hover:!text-black hover:no-underline" rel="author" href="{{ "/" | relative_url }}">
+      <div class="w-full text-3xl uppercase leading-[1.4] tracking-wider" style="font-family: fb;">
+        Angela Bravo
+      </div>
+      <div class="text-[10px] uppercase" style="font-family: f; letter-spacing: 0.08rem">
+        Art Director + Production Designer
+      </div>
+    </a>
+		<ul class="nav-menu bg-white text-black flex items-center space-x-4 text-right my-2 ml-0 mr-1">
+      {%- assign page_paths = site.pages | sort: "position" | map: "path" -%}
+      {%- for path in page_paths -%}
+        {%- assign my_page = site.pages | where: "path", path | first -%}
+        {%- if my_page.title -%}
+        <li class="list-none hidden font-bold sm:text-sm sm:block sm:uppercase pr-3 my-0">
+          <a
+            href="{{ my_page.url | relative_url }}"
+            class="no-underline border-0 hover:text-gray-300 focus:text-gray-300 active:text-gray-300"
+            aria-label="{{ my_page.title }}"
+          >
+            {{ my_page.title | escape }}
+          </a>
+        </li>
+        {%- endif -%}
+      {%- endfor -%}
+      <li class="list-none hidden sm:block my-0">
+        <a href="https://www.instagram.com/angela.bravomar/" class="no-underline flex items-center">
+          <img src="/assets/images/instagram.png" alt="Instagram" class="w-[18px]" />
+        </a>
+      </li>
+		</ul>
+    <ul class="vertical-menu bg-white text-black flex flex-col text-center my-2 ml-0 absolute top-[66px] left-0 w-full drop-shadow-lg">
+      {%- assign page_paths = site.pages | sort: "position" | map: "path" -%}
+      {%- for path in page_paths -%}
+        {%- assign my_page = site.pages | where: "path", path | first -%}
+        {%- if my_page.title -%}
+        <li class="list-none hidden font-bold py-4 border-b border-b-gray-100 items-center">
+          <a
+            href="{{ my_page.url | relative_url }}"
+            class="no-underline hover:text-gray-600 focus:text-gray-300 active:text-gray-300 block w-full"
+            aria-label="{{ my_page.title }}"
+          >
+            {{ my_page.title | escape }}
+          </a>
+        </li>
+        {%- endif -%}
+      {%- endfor -%}
+      <li class="list-none hidden py-4 border-b border-b-gray-100 justify-center items-center">
+        <a href="https://www.instagram.com/angela.bravomar/" class="no-underline flex w-full justify-center">
+          <img src="/assets/images/instagram.png" alt="Instagram" class="w-[24px]" />
+        </a>
+      </li>
+    </ul>
+	</nav>
+</header>

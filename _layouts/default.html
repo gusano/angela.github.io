@@ -3,18 +3,20 @@
 
   {%- include head.html -%}
 
-  <body>
+  <body class="text-gray-700">
+    {%- include navbar.html -%}
 
-    {%- include header.html -%}
-
-    <main class="page-content px-12" aria-label="Content">
-      <div class="wrapper-OFF">
-        {{ content }}
-      </div>
+    <main class="mt-16" aria-label="Content">
+      <div class="p-4">{{ content }}</div>
     </main>
 
     {%- include footer.html -%}
-
+    <!-- <script type="text/javascript" src="{{ site.baseurl }}/assets/js/lightbox.js"></script> -->
+    {% if page.folder != "" %}
+    <script type="text/javascript" src="{{ site.baseurl }}/assets/js/carousel.js"></script>
+    {% endif %}
+    <!-- <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/lightbox.css"> -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/carousel.css">
   </body>
 
 </html>
