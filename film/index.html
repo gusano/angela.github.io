@@ -20,113 +20,210 @@
 <!-- End Jekyll SEO tag -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pompiere&family=Roboto:wght@400;700&family=Rubik&display=swap" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="/assets/main.css"> -->
   <link rel="stylesheet" href="/assets/css/main.css"><link type="application/atom+xml" rel="alternate" href="http://angelabravo.net/feed.xml" title="Angela Bravo" /></head>
-<body>
-    <div style="width:100vw; height:100vh; display:flex; justify-content:center; align-items:center; font-size:4rem; font-weight:bold;text-align:center">
-      ANGELA BRAVO
-    </div>
-
-    <!--<header class="w-full fixed z-[1000] bg-white py-2 px-2 sm:px-4 md:px-4 border-0 border-b border-gray-300" role="banner">
-
-  <div class="wrapper-OFF flex justify-between items-center mx-auto"><a class="site-title-OFF !text-black hover:!text-black hover:no-underline" rel="author" href="/">
+<body class="text-gray-700"><header class="fixed w-full top-0 z-[9999] bg-white drop-shadow-md">
+	<nav class="flex justify-between items-center border-b border-b-gray-300 px-4 py-2">
+		<input type="checkbox" id="nav-checkbox" class="hidden">
+		<label for="nav-checkbox" id="nav-toggle" class="absolute sm:hidden cursor-pointer my-1 right-4 w-4 h-4">
+      <div class="space-y-2 relative right-4 top-[-2px]" id="menu">
+        <span class="block w-8 h-0.5 bg-black"></span>
+        <span class="block w-8 h-0.5 bg-black"></span>
+        <span class="block w-8 h-0.5 bg-black"></span>
+      </div>
+			<span id="svg-close" class="close w-6 fill-white hidden absolute -top-1 right-2"></span>
+    </label>
+    <a class="!text-black hover:!text-black hover:no-underline" rel="author" href="/">
       <div class="w-full text-3xl uppercase leading-[1.4] tracking-wider" style="font-family: fb;">
         Angela Bravo
       </div>
-      <div class="text-[10px] uppercase tracking-widest" style="font-family: f;">
+      <div class="text-[10px] uppercase" style="font-family: f; letter-spacing: 0.08rem">
         Art Director + Production Designer
       </div>
     </a>
-
-    <nav class="site-nav">
-      <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-      <label for="nav-trigger">
-        <span class="menu-icon">
-          <svg viewBox="0 0 18 15" width="18px" height="15px">
-            <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-          </svg>
-        </span>
-      </label>
-
-      <div class="trigger flex items-center"><a
-            class="text-md uppercase !text-black mr-10 last-of-type:mr-0 hover:!text-black hover:no-underline"
+		<ul class="nav-menu bg-white text-black flex items-center space-x-4 text-right my-2 ml-0 mr-1"><li class="list-none hidden font-bold sm:text-sm sm:block sm:uppercase pr-3 my-0">
+          <a
             href="/film/"
-            style="font-family: f;"
+            class="no-underline border-0 hover:text-gray-300 focus:text-gray-300 active:text-gray-300"
+            aria-label="Film"
           >
             Film
-          </a><a
-            class="text-md uppercase !text-black mr-10 last-of-type:mr-0 hover:!text-black hover:no-underline"
+          </a>
+        </li><li class="list-none hidden font-bold sm:text-sm sm:block sm:uppercase pr-3 my-0">
+          <a
             href="/stage-design/"
-            style="font-family: f;"
+            class="no-underline border-0 hover:text-gray-300 focus:text-gray-300 active:text-gray-300"
+            aria-label="Stage Design"
           >
             Stage Design
-          </a><a
-            class="text-md uppercase !text-black mr-10 last-of-type:mr-0 hover:!text-black hover:no-underline"
+          </a>
+        </li><li class="list-none hidden font-bold sm:text-sm sm:block sm:uppercase pr-3 my-0">
+          <a
             href="/about/"
-            style="font-family: f;"
+            class="no-underline border-0 hover:text-gray-300 focus:text-gray-300 active:text-gray-300"
+            aria-label="About"
           >
             About
-          </a><a
-            class="text-md uppercase !text-black mr-10 last-of-type:mr-0 hover:!text-black hover:no-underline"
-            href="/awards/"
-            style="font-family: f;"
+          </a>
+        </li><li class="list-none hidden sm:block my-0">
+        <a href="https://www.instagram.com/angela.bravomar/" class="no-underline flex items-center">
+          <img src="/assets/images/instagram.png" alt="Instagram" class="w-[18px]" />
+        </a>
+      </li>
+		</ul>
+    <ul class="vertical-menu bg-white text-black flex flex-col text-center my-2 ml-0 absolute top-[66px] left-0 w-full drop-shadow-lg"><li class="list-none hidden font-bold py-4 border-b border-b-gray-100 items-center">
+          <a
+            href="/film/"
+            class="no-underline hover:text-gray-600 focus:text-gray-300 active:text-gray-300 block w-full"
+            aria-label="Film"
           >
-            Award · Nominations
-          </a><a
-            class="text-md uppercase !text-black mr-10 last-of-type:mr-0 hover:!text-black hover:no-underline"
-            href="/cv/"
-            style="font-family: f;"
+            Film
+          </a>
+        </li><li class="list-none hidden font-bold py-4 border-b border-b-gray-100 items-center">
+          <a
+            href="/stage-design/"
+            class="no-underline hover:text-gray-600 focus:text-gray-300 active:text-gray-300 block w-full"
+            aria-label="Stage Design"
           >
-            Cv
-          </a></div>
-    </nav>
-  </div>
+            Stage Design
+          </a>
+        </li><li class="list-none hidden font-bold py-4 border-b border-b-gray-100 items-center">
+          <a
+            href="/about/"
+            class="no-underline hover:text-gray-600 focus:text-gray-300 active:text-gray-300 block w-full"
+            aria-label="About"
+          >
+            About
+          </a>
+        </li><li class="list-none hidden py-4 border-b border-b-gray-100 justify-center items-center">
+        <a href="https://www.instagram.com/angela.bravomar/" class="no-underline flex w-full justify-center">
+          <img src="/assets/images/instagram.png" alt="Instagram" class="w-[24px]" />
+        </a>
+      </li>
+    </ul>
+	</nav>
 </header>
--->
-    <!---->
-    <!-- <main class="mt-16" aria-label="Content"> -->
-    <!--   <div class="mt-4 p-4"><div class="main-grid grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3">
+<main class="mt-16" aria-label="Content">
+      <div class="p-4"><div class="main-grid mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3">
   
   <a class="border border-gray-300 shadow-md no-underline hover:no-underline !text-black" href="/projects/waiting-for-the-barbarians">
     <img class="w-full" src="/assets/images/barbarians-thumb.jpg" alt="/projects/waiting-for-the-barbarians" />
     <div
-      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-2 py-2 uppercase"
-      style="font-family: f"
+      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-3 py-2 uppercase font-bold tracking-wider font-['Pompiere']"
     >
       Waiting For The Barbarians
     </div>
   </a><a class="border border-gray-300 shadow-md no-underline hover:no-underline !text-black" href="/projects/exodo">
     <img class="w-full" src="/assets/images/exodo-thumb.jpg" alt="/projects/exodo" />
     <div
-      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-2 py-2 uppercase"
-      style="font-family: f"
+      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-3 py-2 uppercase font-bold tracking-wider font-['Pompiere']"
     >
       Exodo
     </div>
   </a><a class="border border-gray-300 shadow-md no-underline hover:no-underline !text-black" href="/projects/la-pesca-del-atun-blanco">
     <img class="w-full" src="/assets/images/atun-thumb.jpg" alt="/projects/la-pesca-del-atun-blanco" />
     <div
-      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-2 py-2 uppercase"
-      style="font-family: f"
+      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-3 py-2 uppercase font-bold tracking-wider font-['Pompiere']"
     >
       La Pesca Del Atun Blanco
     </div>
+  </a><a class="border border-gray-300 shadow-md no-underline hover:no-underline !text-black" href="/projects/naomis-reise">
+    <img class="w-full" src="/assets/images/naomi-thumb.jpg" alt="/projects/naomis-reise" />
+    <div
+      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-3 py-2 uppercase font-bold tracking-wider font-['Pompiere']"
+    >
+      Naomis Reise
+    </div>
+  </a><a class="border border-gray-300 shadow-md no-underline hover:no-underline !text-black" href="/projects/sofia-y-el-terco">
+    <img class="w-full" src="/assets/images/sofia-thumb.jpg" alt="/projects/sofia-y-el-terco" />
+    <div
+      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-3 py-2 uppercase font-bold tracking-wider font-['Pompiere']"
+    >
+      Sofia Y El Terco
+    </div>
+  </a><a class="border border-gray-300 shadow-md no-underline hover:no-underline !text-black" href="/projects/nebenzimmer">
+    <img class="w-full" src="/assets/images/nebenzimmer-thumb.jpg" alt="/projects/nebenzimmer" />
+    <div
+      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-3 py-2 uppercase font-bold tracking-wider font-['Pompiere']"
+    >
+      Nebenzimmer
+    </div>
+  </a><a class="border border-gray-300 shadow-md no-underline hover:no-underline !text-black" href="/projects/anonimata">
+    <img class="w-full" src="/assets/images/anonimata-thumb.jpg" alt="/projects/anonimata" />
+    <div
+      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-3 py-2 uppercase font-bold tracking-wider font-['Pompiere']"
+    >
+      Anonimata
+    </div>
+  </a><a class="border border-gray-300 shadow-md no-underline hover:no-underline !text-black" href="/projects/pantaleon">
+    <img class="w-full" src="/assets/images/pantaleon-thumb.jpg" alt="/projects/pantaleon" />
+    <div
+      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-3 py-2 uppercase font-bold tracking-wider font-['Pompiere']"
+    >
+      Pantaleón
+    </div>
+  </a><a class="border border-gray-300 shadow-md no-underline hover:no-underline !text-black" href="/projects/viste-a-cristina-el-7-de-marzo">
+    <img class="w-full" src="/assets/images/cristina-thumb.jpg" alt="/projects/viste-a-cristina-el-7-de-marzo" />
+    <div
+      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-3 py-2 uppercase font-bold tracking-wider font-['Pompiere']"
+    >
+      ¿viste a cristina el 7 de marzo?
+    </div>
+  </a><a class="border border-gray-300 shadow-md no-underline hover:no-underline !text-black" href="/projects/veeduria">
+    <img class="w-full" src="/assets/images/veeduria-thumb.jpg" alt="/projects/veeduria" />
+    <div
+      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-3 py-2 uppercase font-bold tracking-wider font-['Pompiere']"
+    >
+      Veeduría
+    </div>
+  </a><a class="border border-gray-300 shadow-md no-underline hover:no-underline !text-black" href="/projects/burn-notice-the-fall-of-sam-axe">
+    <img class="w-full" src="/assets/images/axe-thumb.jpg" alt="/projects/burn-notice-the-fall-of-sam-axe" />
+    <div
+      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-3 py-2 uppercase font-bold tracking-wider font-['Pompiere']"
+    >
+      Burn Notice: The Fall of Sam Axe
+    </div>
+  </a><a class="border border-gray-300 shadow-md no-underline hover:no-underline !text-black" href="/projects/en-tus-manos">
+    <img class="w-full" src="/assets/images/manos-thumb.jpg" alt="/projects/en-tus-manos" />
+    <div
+      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-3 py-2 uppercase font-bold tracking-wider font-['Pompiere']"
+    >
+      En Tus Manos
+    </div>
+  </a><a class="border border-gray-300 shadow-md no-underline hover:no-underline !text-black" href="/projects/songs-for-silvia">
+    <img class="w-full" src="/assets/images/songs-thumb.jpg" alt="/projects/songs-for-silvia" />
+    <div
+      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-3 py-2 uppercase font-bold tracking-wider font-['Pompiere']"
+    >
+      Songs For Silvia
+    </div>
+  </a><a class="border border-gray-300 shadow-md no-underline hover:no-underline !text-black" href="/projects/la-milagrosa">
+    <img class="w-full" src="/assets/images/milagrosa-thumb-2.jpg" alt="/projects/la-milagrosa" />
+    <div
+      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-3 py-2 uppercase font-bold tracking-wider font-['Pompiere']"
+    >
+      La Milagrosa
+    </div>
+  </a><a class="border border-gray-300 shadow-md no-underline hover:no-underline !text-black" href="/projects/la-cerca">
+    <img class="w-full" src="/assets/images/cerca-thumb.jpg" alt="/projects/la-cerca" />
+    <div
+      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-3 py-2 uppercase font-bold tracking-wider font-['Pompiere']"
+    >
+      La Cerca
+    </div>
   </a></div>
 
-</div> -->
-    <!-- </main> -->
-    <!---->
-    <!--<footer class="site-footer h-card">
+</div>
+    </main><footer class="site-footer h-card">
 
 </footer>
--->
-    <!-- <script type="text/javascript" src="/assets/js/lightbox.js"></script> -->
-    <!--  -->
-    <!-- <script type="text/javascript" src="/assets/js/carousel.js"></script> -->
-    <!--  -->
+<!-- <script type="text/javascript" src="/assets/js/lightbox.js"></script> -->
+    
+    <script type="text/javascript" src="/assets/js/carousel.js"></script>
+    
     <!-- <link rel="stylesheet" href="/assets/css/lightbox.css"> -->
-    <!-- <link rel="stylesheet" href="/assets/css/carousel.css"> -->
+    <link rel="stylesheet" href="/assets/css/carousel.css">
   </body>
 
 </html>

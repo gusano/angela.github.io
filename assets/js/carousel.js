@@ -1,8 +1,8 @@
 const carousel = document.querySelector(".carousel");
 // const backgroundImage = document.querySelector(".bg-image");
 
-const leftArrow = document.querySelector(".left-arrow");
-const rightArrow = document.querySelector(".right-arrow");
+const leftArrow = document.querySelector("#left-arrow");
+const rightArrow = document.querySelector("#right-arrow");
 
 let gap = 18;
 let currentIndex = 0;
@@ -16,42 +16,56 @@ const totalImages = Object.keys(images).length;
 
 const imageWidth = 580;
 
-leftArrow.addEventListener("click", () => {
-  prevIndex = currentIndex;
-  currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+if (!!leftArrow) {
+  let done = true;
+  leftArrow.addEventListener("click", () => {
+    if (done === false) return;
 
-  // Use previous image width
-  const index = prevIndex === 0 ? (images.length - 1) : (prevIndex - 1)
-  const w = images[index].getBoundingClientRect().width + gap;
-  // carousel.style.transform = `translateX(-${imageWidth}px)`;
-  carousel.style.transform = `translateX(-${w}px)`;
-  carousel.insertBefore(images[currentIndex], carousel.firstChild);
+    done = false;
+    prevIndex = currentIndex;
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
 
-  setTimeout(() => {
-    carousel.style.transform = "";
+    // Use previous image width
+    const index = prevIndex === 0 ? (images.length - 1) : (prevIndex - 1)
+    const w = images[index].getBoundingClientRect().width + gap;
+    // carousel.style.transform = `translateX(-${imageWidth}px)`;
+    carousel.style.transform = `translateX(-${w}px)`;
+    carousel.insertBefore(images[currentIndex], carousel.firstChild);
+
+    setTimeout(() => {
+      carousel.style.transform = "";
+      carousel.classList.add("sliding-transition");
+    }, 10);
+
+    setTimeout(() => {
+      carousel.classList.remove("sliding-transition");
+      done = true;
+    }, 490);
+  });
+};
+
+if (!!rightArrow) {
+  let done = true;
+  rightArrow.addEventListener("click", () => {
+    if (done === false) return;
+
+    done = false;
     carousel.classList.add("sliding-transition");
-  }, 10);
 
-  setTimeout(() => {
-    carousel.classList.remove("sliding-transition");
-  }, 490);
-});
+    prevIndex = currentIndex;
+    currentIndex = (currentIndex + 1) % totalImages;
 
-rightArrow.addEventListener("click", () => {
-  carousel.classList.add("sliding-transition");
+    // Use current image width
+    const w = images[prevIndex].getBoundingClientRect().width + gap;
 
-  prevIndex = currentIndex;
-  currentIndex = (currentIndex + 1) % totalImages;
+    // carousel.style.transform = `translateX(-${imageWidth}px)`;
+    carousel.style.transform = `translateX(-${w}px)`;
 
-  // Use current image width
-  const w = images[prevIndex].getBoundingClientRect().width + gap;
-
-  // carousel.style.transform = `translateX(-${imageWidth}px)`;
-  carousel.style.transform = `translateX(-${w}px)`;
-
-  setTimeout(() => {
-    carousel.appendChild(images[prevIndex]);
-    carousel.classList.remove("sliding-transition");
-    carousel.style.transform = "";
-  }, 500);
-});
+    setTimeout(() => {
+      carousel.appendChild(images[prevIndex]);
+      carousel.classList.remove("sliding-transition");
+      carousel.style.transform = "";
+      done = true;
+    }, 500);
+  });
+};
