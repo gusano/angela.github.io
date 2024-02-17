@@ -17,4 +17,4 @@ Has participated in several Colombian, German and American productions that have
 <br /> 
 Was selected in 2013 to participate in the XII version of the Berlinale Talent Campus of the Berlin Film Festival and was nominated for the Best Art Direction award in the Hof International Film Festival in Germany.  
 <br /> 
-She currently works in production design between Los Angeles and Mexico City.
+She currently works in production design between Los Angeles, Mexico City and Bogotá.
