@@ -1,7 +1,7 @@
 ---
 category: film
 order: 1
-position: "Set Director + Character Designer"
+position: "Set Decorator + Character Designer"
 title: La Cerca
 slug: la-cerca
 thumb: "cerca-thumb.jpg"
