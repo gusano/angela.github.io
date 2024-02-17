@@ -5,7 +5,6 @@ const rightArrow = document.querySelector("#right-arrow");
 
 // Swipe
 let touchstartX = 0;
-let touchendX = 0;
 
 let gap = 18;
 let currentIndex = 0;
@@ -49,7 +48,6 @@ function swipeRight() {
   // Use current image width
   const w = images[prevIndex].getBoundingClientRect().width + gap;
 
-  // carousel.style.transform = `translateX(-${imageWidth}px)`;
   carousel.style.transform = `translateX(-${w}px)`;
 
   setTimeout(() => {
@@ -60,24 +58,19 @@ function swipeRight() {
   }, 500);
 }
 
-// Gesture
-function handleGesture() {
-  if (touchendX < touchstartX) swipeLeft();
-  if (touchendX > touchstartX) swipeRight();
-}
-
 // init
 let done = true;
 
 // Swipe
 if (!!carousel) {
-  carousel.addEventListener('touchstart', function(event) {
-    touchstartX = event.screenX;
+  carousel.addEventListener('touchstart', function(e) {
+    touchstartX = e.touches[0].clientX;
   }, false);
 
-  carousel.addEventListener('touchend', function(event) {
-    touchendX = event.screenX;
-    handleGesture();
+  carousel.addEventListener('touchend', function(e) {
+    let delta = e.changedTouches[0].clientX - touchstartX;
+    if (delta < 0) swipeRight();
+    if (delta > 0) swipeLeft();
   }, false);
 }
 
