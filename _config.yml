@@ -9,8 +9,10 @@ url: "http://angelabravo.net"
 # Build settings
 theme: minima
 plugins:
-  - jekyll-postcss
+  - jekyll-postcss-v2
+
 postcss:
+  script: node_modules/.bin/postcss
   cache: false
 
 collections:
