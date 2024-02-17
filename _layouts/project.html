@@ -21,4 +21,5 @@ layout: default
     </div>
   </article>
 </div>
-<script type="text/javascript" src="{{ site.baseurl }}/assets/js/carousel.js"></script>
+{% assign cacheBust = site.time | date:'?v=%s' %}
+<script type="text/javascript" src="{{ '/assets/js/carousel.js' | relative_url | append: cacheBust }}"></script>
