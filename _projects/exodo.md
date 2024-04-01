@@ -2,7 +2,7 @@
 category: film
 order: 21
 position: Production Designer
-title: Exodo
+title: Éxodo
 slug: exodo
 thumb: "exodo-thumb.jpg"
 folder: "/assets/images/exodo"

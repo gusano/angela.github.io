@@ -3,10 +3,10 @@
   {% assign projects = site.projects | where: "category", include.category | default: all_projects %}
 
   {%- for project in projects reversed -%}
-  <a class="border border-gray-300 shadow-md no-underline hover:no-underline !text-black" href="{{ project.url }}">
+  <a class="border border-gray-300 shadow-sm no-underline hover:no-underline !text-black" href="{{ project.url }}">
     <img class="w-full" src="{{ site.baseurl }}/assets/images/{{ project.thumb }}" alt="{{ project.id }}" />
     <div
-      class="border-t-[3px] flex items-center text-lg lg:text-xl xl:text-[1.5vw] 2xl:text-[1.5vw] px-3 py-2 uppercase font-bold tracking-wider font-['Pompiere']"
+      class="border-t-[3px] flex items-center text-lg lg:text-lg xl:text-[1.25vw] 2xl:text-[1.25vw] px-3 py-2 uppercase tracking-wider"
     >
       {{ project.title }}
     </div>
