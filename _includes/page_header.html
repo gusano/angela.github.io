@@ -1,9 +1,0 @@
-<div class="mt-4 mb-12 max-w-screen-lg mx-auto">
-  {% if include.page.vimeo and include.page.vimeo != nil %}
-    {% include vimeo.html id=include.page.vimeo %}
-  {% elsif include.page.youtube and include.page.youtube != nil %}
-    {% include youtube.html id=include.page.youtube %}
-  {% else %}
-    <img src="{{ include.page.header | relative_url }}" alt="Anonimata Header" class="mx-auto" />
-  {% endif %}
-</div>

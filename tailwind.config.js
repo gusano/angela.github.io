@@ -1,11 +1,7 @@
 module.exports = {
   content: [
-    './_drafts/**/*.html',
-    './_includes/**/*.html',
-    './_layouts/**/*.html',
-    './_posts/*.md',
-    './*.md',
-    './*.html',
+    './dist/*.html',
+    './src/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
     theme: {
@@ -16,4 +12,7 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
   ],
+  corePlugins: {
+    preflight: false,
+  },
 }
