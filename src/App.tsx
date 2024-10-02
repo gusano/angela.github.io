@@ -1,16 +1,11 @@
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-// import * as React from 'react'
-// import * as ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import About from './About'
 import ErrorPage from './ErrorPage'
 import IndexPage from './IndexPage'
 import Layout from './Layout'
 import Project from './Project'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/*',
     Component: Layout,

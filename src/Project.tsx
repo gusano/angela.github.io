@@ -36,6 +36,7 @@ function Project() {
       { eager: true, query: '?url', import: 'default' },
     )
   )
+  console.log({ allImages }) // eslint-disable-line
   const images = allImages
     .filter((url: string) => url.includes(project.media))
     .map((url: string) => ({
@@ -49,6 +50,7 @@ function Project() {
       //   height: Math.round((height / width) * breakpoint),
       // })),
     }) as Photo)
+  console.log({ images }) // eslint-disable-line
 
   // const contents = Object.values(
   //   import.meta.glob('./assets/md/*.md', { query: 'raw', import: 'default' })

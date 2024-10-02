@@ -78,7 +78,7 @@ function MyLayout() {
         </Flex>
       </Header>
       <Content><Outlet /></Content>
-      <Footer>Footer</Footer>
+      <Footer>Made with ❤️ by <a href="https://yvanvolochine.com" target="_blank">yv</a></Footer>
     </Layout>
   )
 }
