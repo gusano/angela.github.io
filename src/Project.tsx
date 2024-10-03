@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Markdown from 'react-markdown'
 import { RowsPhotoAlbum } from 'react-photo-album'
@@ -16,6 +16,8 @@ import Video from './Video'
 
 function Project() {
   const { name } = useParams()
+  const thumbsRef = useRef(null)
+
   const [index, setIndex] = useState(-1)
   const [content, setContent] = useState('')
 
@@ -101,9 +103,16 @@ function Project() {
         slides={images}
         open={index >= 0}
         index={index}
+        on={{
+          // @ts-ignore
+          enterFullscreen: () => thumbsRef.current?.hide(),
+          // @ts-ignore
+          exitFullscreen: () => thumbsRef.current?.show(),
+        }}
         close={() => setIndex(-1)}
         plugins={[Fullscreen, Thumbnails]}
         thumbnails={{
+          ref: thumbsRef,
           border: 0,
           padding: 0,
           gap: 6,
