@@ -1,13 +1,14 @@
 import { useRouteError } from 'react-router-dom'
 
 export default function ErrorPage() {
-  const error = useRouteError() as { status: string }
-  console.log(error)
+  const error = useRouteError() as { statusText: string, message: string }
+
   return (
-    <div>
+    <div id="error-page">
+      <h1>Oops!</h1>
       <p>
-        404 Page Not Found
+        <i>{error.statusText || error.message}</i>
       </p>
     </div>
-  );
+  )
 }

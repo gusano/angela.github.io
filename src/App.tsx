@@ -23,6 +23,7 @@ const router = createHashRouter([
         Component: IndexPage
       }, {
         path: ':name',
+        // @ts-ignore
         Component: Project,
       }],
     }],
