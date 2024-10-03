@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Markdown from 'react-markdown'
 import { RowsPhotoAlbum } from 'react-photo-album'
@@ -21,7 +21,10 @@ function Project() {
 
   const project = projects.find((p: Project) => p.key === name)
 
-  if (typeof project === 'undefined') return 'NOT FOUND'
+  if (typeof project === 'undefined') {
+    const e = new Error('Not found')
+    throw e
+  }
 
   // const breakpoints = [1080, 640, 384, 256, 128, 96, 64, 48]
   const width = 1024
@@ -36,7 +39,7 @@ function Project() {
       { eager: true, query: '?url', import: 'default' },
     )
   )
-  console.log({ allImages }) // eslint-disable-line
+
   const images = allImages
     .filter((url: string) => url.includes(project.media))
     .map((url: string) => ({
@@ -50,7 +53,6 @@ function Project() {
       //   height: Math.round((height / width) * breakpoint),
       // })),
     }) as Photo)
-  console.log({ images }) // eslint-disable-line
 
   // const contents = Object.values(
   //   import.meta.glob('./assets/md/*.md', { query: 'raw', import: 'default' })
@@ -62,6 +64,11 @@ function Project() {
     setContent(md.default)
   }
   loadMD()
+
+  useEffect(() => {
+    document.documentElement.scrollTo(0, 0)
+    return () => {}
+  }, [])
 
   return (
     <article className="mx-auto px-4 pt-4 sm:px-8 xl:px-12">
