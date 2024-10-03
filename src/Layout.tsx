@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link, NavLink, Outlet } from 'react-router-dom'
 import { Flex, Layout, Popover } from 'antd'
 import { InstagramOutlined, MenuOutlined } from '@ant-design/icons'
@@ -28,6 +29,8 @@ const headerStyle = {
 }
 
 function MyLayout() {
+  const [open, setOpen] = useState<boolean>(false)
+
   return (
     <Layout style={layoutStyle}>
       <Header style={headerStyle} className="px-4 py-2 drop-shadow-md">
@@ -66,13 +69,34 @@ function MyLayout() {
               className="menu-icon sm:visible md:hidden lg:hidden"
               placement="bottomRight"
               trigger="click"
+              open={open}
               content={(
-                <div className="w-full">
-                  TODO!
+                <div className="w-[85vw] h-auto">
+                  <ul className="p-0" style={{ fontFamily: 'f' }}>
+                    {menuItems.map((item: any) => (
+                      <li key={item.key} className="list-none my-4 text-xl uppercase" onClick={() => setOpen((prev: boolean) => !prev)}>
+                        <NavLink
+                          to={item.key}
+                          className={({ isActive }) => `${isActive ? 'underline' : 'no-underline'} border-0 text-black hover:text-gray-300 block w-full`}
+                        >
+                          {item.label}
+                        </NavLink>
+                      </li>
+                    ))}
+                    <li className="list-none">
+                      <a
+                        className="no-underline border-0 text-black hover:text-gray-300 block w-full"
+                        href="https://instagram.com/angela.bravomar"
+                        target="_blank"
+                      >
+                        <InstagramOutlined className="mt-[3px] text-xl" />
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               )}
             >
-              <MenuOutlined className="mt-[3px] text-xl" />
+              <MenuOutlined className="mt-[3px] text-xl" onClick={() => setOpen((prev: boolean) => !prev)} />
             </Popover>
           </>
         </Flex>
