@@ -13,7 +13,7 @@ export const projects: Project[] = [
     key: 'waiting-for-the-barbarians',
     category: 'film',
     title: 'Waiting For The Barbarians',
-    position: 'Assistant to Production Designer and Set Decorator Crispian Sallis',
+    position: 'Assistant to Production Designer\nSet Decorator Crispian Sallis',
     media: 'barbarians',
     content: 'barbarians',
     youtube: 'ceL56uGSOIc',

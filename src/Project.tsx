@@ -81,7 +81,7 @@ function Project() {
         >
           {project.title}
         </div>
-        <div className="text-3xl sm:text-4xl pb-6 italic font-['Pompiere']">
+        <div className="text-3xl pb-6 italic font-['Afacad Flux'] font-light uppercase whitespace-pre-line">
           {project.position}
         </div>
       </header>
