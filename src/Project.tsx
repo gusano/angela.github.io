@@ -14,6 +14,10 @@ import 'yet-another-react-lightbox/plugins/thumbnails.css'
 import { projects } from './projects'
 import Video from './Video'
 
+interface Md {
+  default: string
+}
+
 function Project() {
   const { name } = useParams()
   const thumbsRef = useRef(null)
@@ -60,9 +64,8 @@ function Project() {
   //   import.meta.glob('./assets/md/*.md', { query: 'raw', import: 'default' })
   // )
   async function loadMD() {
-    let md
     if (!project) return
-    md = await import(`./assets/md/${project.content}.md?raw`)
+    const md: Md = await import(`./assets/md/${project.content}.md?raw`)
     setContent(md.default)
   }
   loadMD()
@@ -103,12 +106,12 @@ function Project() {
         slides={images}
         open={index >= 0}
         index={index}
-        on={{
-          // @ts-ignore
-          enterFullscreen: () => thumbsRef.current?.hide(),
-          // @ts-ignore
-          exitFullscreen: () => thumbsRef.current?.show(),
-        }}
+        // on={{
+        //   // @ts-expect-error wtf
+        //   enterFullscreen: () => thumbsRef.current?.hide(),
+        //   // @ts-expect-error wtf
+        //   exitFullscreen: () => thumbsRef.current?.show(),
+        // }}
         close={() => setIndex(-1)}
         plugins={[Fullscreen, Thumbnails]}
         thumbnails={{
