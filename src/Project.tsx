@@ -116,6 +116,9 @@ function Project() {
         }}
         close={() => setIndex(-1)}
         plugins={[Fullscreen, Thumbnails]}
+        fullscreen={{
+          auto: true,
+        }}
         thumbnails={{
           ref: thumbsRef,
           border: 0,
