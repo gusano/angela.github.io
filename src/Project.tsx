@@ -63,12 +63,14 @@ function Project() {
   // const contents = Object.values(
   //   import.meta.glob('./assets/md/*.md', { query: 'raw', import: 'default' })
   // )
-  async function loadMD() {
+  useEffect(() => {
+    async function loadMD() {
+      const md: Md = await import(`./assets/md/${project?.content}.md?raw`)
+      setContent(md.default)
+    }
     if (!project) return
-    const md: Md = await import(`./assets/md/${project.content}.md?raw`)
-    setContent(md.default)
-  }
-  loadMD()
+    loadMD()
+  }, [content, project])
 
   useEffect(() => {
     document.documentElement.scrollTo(0, 0)
@@ -106,12 +108,12 @@ function Project() {
         slides={images}
         open={index >= 0}
         index={index}
-        // on={{
-        //   // @ts-expect-error wtf
-        //   enterFullscreen: () => thumbsRef.current?.hide(),
-        //   // @ts-expect-error wtf
-        //   exitFullscreen: () => thumbsRef.current?.show(),
-        // }}
+        on={{
+          // @ts-expect-error wtf
+          enterFullscreen: () => thumbsRef.current?.hide(),
+          // @ts-expect-error wtf
+          exitFullscreen: () => thumbsRef.current?.show(),
+        }}
         close={() => setIndex(-1)}
         plugins={[Fullscreen, Thumbnails]}
         thumbnails={{
