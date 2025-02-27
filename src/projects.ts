@@ -3,7 +3,7 @@ import type { Project } from './types'
 export const projects: Project[] = [
   {
     key: 'the-hive-la-colmena',
-    category: 'stage-design',
+    category: 'theater',
     title: 'The Hive + La Colmena',
     position: 'Art Director + Stage Designer',
     media: 'colmena',
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     vimeo: '39093793',
   }, {
     key: 'dos-cables',
-    category: 'stage-design',
+    category: 'theater',
     title: 'Dos Cables',
     position: 'Art direction + Scenography',
     media: 'cables',
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     youtube: 'S3rEql9H-Ss',
   }, {
     key: 'cinehuerta',
-    category: 'stage-design',
+    category: 'theater',
     title: 'Cinehuerta',
     position: 'Direction + Art Direction',
     media: 'cinehuerta',
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     youtube: 'c6MMX4aI-HA',
   }, {
     key: 'conciertos',
-    category: 'stage-design',
+    category: 'theater',
     title: 'Conciertos',
     position: 'Art Director',
     media: 'conciertos',
@@ -102,7 +102,7 @@ export const projects: Project[] = [
     youtube: 'F3jkLCblaLg',
   }, {
     key: 'las-listas',
-    category: 'stage-design',
+    category: 'theater',
     title: 'Las Listas',
     position: 'Art Direction + Costume Design',
     media: 'listas',
@@ -126,7 +126,7 @@ export const projects: Project[] = [
     vimeo: '57240219',
   }, {
     key: 'el-nino-y-los-sortilegios',
-    category: 'stage-design',
+    category: 'theater',
     title: 'El niño y los sortilegios',
     position: 'Development and manufacture of scenographic elements for the opera',
     media: 'sortilegios',
@@ -150,7 +150,7 @@ export const projects: Project[] = [
     videoFirst: true,
   }, {
     key: 'orfeo-and-euridice-at-cielo-drive',
-    category: 'stage-design',
+    category: 'theater',
     title: 'Orfeo & Euridice at Cielo Drive 10050',
     position: 'Stage design, costume design, props',
     media: 'orfeo',
