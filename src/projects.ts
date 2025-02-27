@@ -127,7 +127,7 @@ export const projects: Project[] = [
   }, {
     key: 'el-nino-y-los-sortilegios',
     category: 'theater',
-    title: 'El niño y los sortilegios',
+    title: 'The Child And The Spells',
     position: 'Development and manufacture of scenographic elements for the opera',
     media: 'sortilegios',
     content: 'sortilegios',
