@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
+import { createRef, useEffect, useRef, useState } from 'react'
+import type { RefObject } from 'react'
 import { useParams } from 'react-router-dom'
 import Markdown from 'react-markdown'
 import { RowsPhotoAlbum } from 'react-photo-album'
@@ -14,6 +15,12 @@ import 'yet-another-react-lightbox/plugins/thumbnails.css'
 import { projects } from './projects'
 import Video from './Video'
 
+interface FullPhoto extends Omit<Photo, 'width' | 'height'> {
+  ref: RefObject<HTMLImageElement>
+  width?: number
+  height?: number
+}
+
 interface Md {
   default: string
 }
@@ -21,6 +28,8 @@ interface Md {
 function Project() {
   const { name } = useParams()
   const thumbsRef = useRef(null)
+
+  const [imagesWithDimensions, setImagesWithDimensions] = useState<Photo[]>([])
 
   const [index, setIndex] = useState(-1)
   const [content, setContent] = useState('')
@@ -33,8 +42,6 @@ function Project() {
   }
 
   // const breakpoints = [1080, 640, 384, 256, 128, 96, 64, 48]
-  const width = 1024
-  const height = 780
 
   /**
    * @TODO use a list of all images with their width/height/etc... instead of this
@@ -49,16 +56,16 @@ function Project() {
   const images = allImages
     .filter((url: string) => url.includes(project.media))
     .map((url: string) => ({
+      key: url,
       src: url,
       alt: '',
-      width,
-      height,
+      ref: createRef(),
       // srcSet: breakpoints.map((breakpoint) => ({
       //   src: Link(asset, breakpoint),
       //   width: breakpoint,
       //   height: Math.round((height / width) * breakpoint),
       // })),
-    }) as Photo)
+    }) as FullPhoto)
 
   // const contents = Object.values(
   //   import.meta.glob('./assets/md/*.md', { query: 'raw', import: 'default' })
@@ -97,13 +104,38 @@ function Project() {
         </div>
       ) : null}
 
-      <div className="max-w-screen-lg mx-auto">
-        <RowsPhotoAlbum
-          photos={images}
-          targetRowHeight={150}
-          onClick={({ index }) => setIndex(index)}
-        />
+      {/* Loop through all images, once they are loaded, get their width and height for the Album */}
+      <div className="hidden">
+        {images.map(img => (
+          <img
+            key={img.key}
+            ref={img.ref}
+            src={img.src}
+            onLoad={() => {
+              // eslint-disable-next-line
+              const { ref, ...rest } = img
+              setImagesWithDimensions(curr => ([
+                ...curr,
+                {
+                  ...rest,
+                  width: img.ref.current?.naturalWidth ?? 0,
+                  height: img.ref.current?.naturalHeight ?? 0,
+                },
+              ]))
+            }}
+          />
+        ))}
       </div>
+
+      {imagesWithDimensions.length === images.length && (
+        <div className="max-w-screen-lg mx-auto">
+          <RowsPhotoAlbum
+            photos={imagesWithDimensions}
+            // targetRowHeight={150}
+            onClick={({ index }) => setIndex(index)}
+          />
+        </div>
+      )}
       <Lightbox
         slides={images}
         open={index >= 0}
