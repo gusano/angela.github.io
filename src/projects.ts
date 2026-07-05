@@ -1,5 +1,16 @@
 import type { Project } from './types'
 
+/**
+ * key:       unique key
+ * title:     project title on main page and project page
+ * position:  position text (can use \n for newlines)
+ * media:     images folder name (`assets/images/`) AND thumb name, if media is 'foobar' then `foobar-thumb.jpg`
+ * content:   filename for project text content on project page (`assets/md/` folder)
+ * youtube:   YouTube video id (optional)
+ * vimeo:     Vimeo video id (optional)
+ * videoFirst: Puts the video link first at the top (instead of bottom)
+ */
+
 export const projects: Project[] = [
   {
     key: 'the-hive-la-colmena',
