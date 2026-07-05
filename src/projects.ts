@@ -13,6 +13,15 @@ import type { Project } from './types'
 
 export const projects: Project[] = [
   {
+    key: 'opponents',
+    category: 'film',
+    title: 'For The Opponents / Para Los Contrincantes',
+    position: 'Art Director + Costume Designer',
+    media: 'opponents',
+    content: 'opponents',
+    youtube: 'Huao4WaiFDw',
+    videoFirst: true,
+  }, {
     key: 'faust',
     category: 'theater',
     title: 'Goethe, El Susurro Del Diablo',
