@@ -13,6 +13,13 @@ import type { Project } from './types'
 
 export const projects: Project[] = [
   {
+    key: 'faust',
+    category: 'theater',
+    title: 'Goethe, El Susurro Del Diablo',
+    position: 'Art Director + Costume Designer + Performer',
+    media: 'faust',
+    content: 'faust',
+  }, {
     key: 'the-hive-la-colmena',
     category: 'theater',
     title: 'The Hive + La Colmena',
