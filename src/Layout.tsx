@@ -102,7 +102,9 @@ function MyLayout() {
         </Flex>
       </Header>
       <Content><Outlet /></Content>
-      <Footer>Made with ❤️ by <a href="https://yvanvolochine.com" target="_blank">yv</a></Footer>
+      <Footer className="border-b-0 border-x-0 border-t border-solid border-gray-200 mt-4 text-xs">
+        Made with ❤️ by <a href="https://yvanvolochine.com" target="_blank">yv</a>
+      </Footer>
     </Layout>
   )
 }

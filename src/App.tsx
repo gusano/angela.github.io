@@ -4,6 +4,7 @@ import ErrorPage from './ErrorPage'
 import IndexPage from './IndexPage'
 import Layout from './Layout'
 import Project from './Project'
+import './App.css'
 
 const router = createHashRouter([
   {

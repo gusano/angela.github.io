@@ -106,7 +106,7 @@ function Project() {
       </header>
 
       {project.videoFirst ? (
-        <div className="max-w-screen-md mx-auto prose lg:prose-lg mt-12">
+        <div className="max-w-screen-md mx-auto prose lg:prose-lg">
           <Video project={project} />
         </div>
       ) : null}
@@ -166,7 +166,7 @@ function Project() {
         }}
       />
 
-      <div className="max-w-screen-md mx-auto prose lg:prose-lg mt-12">
+      <div className="max-w-screen-md mx-auto prose lg:prose-lg mt-8">
         <Markdown>{content}</Markdown>
         {!project.videoFirst ? (
           <Video project={project} />
