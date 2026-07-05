@@ -88,12 +88,19 @@ function Project() {
     <article className="mx-auto px-4 pt-4 sm:px-8 xl:px-12">
       <header className="max-w-screen-lg mx-auto mb-4">
         <div
-          className="text-[3rem] sm:text-[4rem] text-black uppercase mr-4"
+          className="text-4xl text-black uppercase mr-4"
           style={{ fontFamily: 'fb' }}
         >
           {project.title}
+          {project.titleIcon && (
+            <img
+              src={`/images/${project.titleIcon}`}
+              alt={project.titleIcon}
+              className="max-h-8 ml-0 md:ml-4 lg:ml-4 xl:ml-4 relative top-[2px]"
+            />
+          )}
         </div>
-        <div className="text-3xl pb-6 italic font-['Afacad Flux'] font-light uppercase whitespace-pre-line">
+        <div className="text-2xl py-6 italic font-['Afacad Flux'] font-light uppercase whitespace-pre-line">
           {project.position}
         </div>
       </header>

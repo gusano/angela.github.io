@@ -16,6 +16,7 @@ export const projects: Project[] = [
     key: 'opponents',
     category: 'film',
     title: 'For The Opponents / Para Los Contrincantes',
+    titleIcon: 'palme.png',
     position: 'Art Director + Costume Designer',
     media: 'opponents',
     content: 'opponents',
